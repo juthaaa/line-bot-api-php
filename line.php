@@ -7,7 +7,7 @@ $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' 
 $request = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($request, true);   // Decode JSON to Array
 
-$name = 'นายจุฑาธวัช ศตะกูรมะ'
+$dev_name = 'นายจุฑาธวัช ศตะกูรมะ'
 if ( sizeof($request_array['events']) > 0 )
 {
 
@@ -24,8 +24,11 @@ if ( sizeof($request_array['events']) > 0 )
 		$text = $event['message']['text'];
 		
 		if(($text == "อยากทราบยอด COVID-19 ครับ")||($text == "ยอด")){
-			
-			$reply_message = "รายงานสถานการณ์ ยอดผู้ติดเชื้อไวรัสโคโรนา 2019 (COVID-19) ในประเทศไทย \n ผู้ป่วยสะสม    จำนวน 398,995 ราย \n ผู้เสียชีวิต    จำนวน 17,365 ราย \n รักษาหาย    จำนวน 103,753 ราย \n ผู้รายงานข้อมูล: ".$name;
+			$reply_message = "รายงานสถานการณ์ ยอดผู้ติดเชื้อไวรัสโคโรนา 2019 (COVID-19) ในประเทศไทย 
+			ผู้ป่วยสะสม    จำนวน 398,995 ราย 
+			ผู้เสียชีวิต    จำนวน 17,365 ราย 
+			รักษาหาย    จำนวน 103,753 ราย 
+			ผู้รายงานข้อมูล: ".$dev_name;
 		}
 		else if(($text== "ข้อมูลส่วนตัวของผู้พัฒนาระบบ")||($text== "ข้อมูล")||($text== "อยู่ที่ไหน")||($text== "อยู่ไหน")){
 			$reply_message = 'ชื่อจุฑาธวัช ศตะกูรมะ รหัสนิสิต 59160164 อายุ 22 ปี';
