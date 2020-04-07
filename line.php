@@ -30,13 +30,15 @@ if ( sizeof($request_array['events']) > 0 )
 	   	$d_new = $data_covid->NewDeaths;
 	   	$n = $data_covid->Recovered;
 	   	$h = $data_covid->Hospitalized;
+	   	$date = $data_covid->UpdateDate;
 	   
 		if(($text == "อยากทราบยอด COVID-19 ครับ")||($text == "ยอด")){
 			$reply_message = 'รายงานสถานการณ์ ยอดผู้ติดเชื้อไวรัสโคโรนา 2019 (COVID-19) ในประเทศไทย
 			ผู้ป่วยสะสม '.$p.' ราย (เพิ่มขึ้น '.$p_new.' ราย)
 			ผู้เสียชีวิต '.$d.' ราย (เพิ่มขึ้น '.$d_new.' ราย)
 			รักษาตัวที่โรงพยาบาล '.$h.' ราย
-			รักษาหาย จำนวน '.$n.' ราย 
+			รักษาหาย จำนวน '.$n.' ราย
+			ข้อมูล ณ วันที่ '.$date.'
 			ผู้รายงานข้อมูล: '.$dev_name;
 		}
 		else if(($text== "ข้อมูลส่วนตัวของผู้พัฒนาระบบ")||($text== "ข้อมูล")){
