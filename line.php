@@ -25,12 +25,13 @@ if ( sizeof($request_array['events']) > 0 )
    {
 		$text = $event['message']['text'];
 		$p = $data_covid->Confirmed;
+	   	$p_new = $data_covid->NewConfirmed;
 	   	$d = 100;
 	   	$n = 50;
 	   
 		if(($text == "อยากทราบยอด COVID-19 ครับ")||($text == "ยอด")){
 			$reply_message = 'รายงานสถานการณ์ ยอดผู้ติดเชื้อไวรัสโคโรนา 2019 (COVID-19) ในประเทศไทย
-			ผู้ป่วยสะสม จำนวน '.$p.' ราย 
+			ผู้ป่วยสะสม จำนวน '.$p.' ราย (เพิ่มขึ้น '.$p_new.' ราย)
 			ผู้เสียชีวิต จำนวน '.$d.' ราย 
 			รักษาหาย จำนวน '.$n.' ราย 
 			ผู้รายงานข้อมูล: '.$dev_name;
