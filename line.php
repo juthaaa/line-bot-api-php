@@ -32,7 +32,7 @@ if ( sizeof($request_array['events']) > 0 )
 	   	$h = $data_covid->Hospitalized;
 	   	$date = $data_covid->UpdateDate;
 	   
-		if(($text == "อยากทราบยอด COVID-19 ครับ")||($text == "ยอด")){
+		if(($text == "อยากทราบยอด COVID-19 ครับ")||($text == "ยอด")||($text == "covid-19")){
 			$reply_message = 'รายงานสถานการณ์ ยอดผู้ติดเชื้อไวรัสโคโรนา 2019 (COVID-19) ในประเทศไทย
 			ผู้ป่วยสะสม '.$p.' ราย (เพิ่มขึ้น '.$p_new.' ราย)
 			ผู้เสียชีวิต '.$d.' ราย (เพิ่มขึ้น '.$d_new.' ราย)
