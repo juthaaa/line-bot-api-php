@@ -8,6 +8,8 @@ $request = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($request, true);   // Decode JSON to Array
 
 $dev_name = 'นายจุฑาธวัช ศตะกูรมะ';
+$response = file_get_contents('https://covid19.th-stat.com/api/open/today');
+$data_covid = json_decode($response);
 if ( sizeof($request_array['events']) > 0 )
 {
 
@@ -22,7 +24,7 @@ if ( sizeof($request_array['events']) > 0 )
    if( $event['message']['type'] == 'text' )
    {
 		$text = $event['message']['text'];
-		$p = 200;
+		$p = $data_covid->Confirmed;
 	   	$d = 100;
 	   	$n = 50;
 	   
